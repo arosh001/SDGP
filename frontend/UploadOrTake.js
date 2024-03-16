@@ -32,7 +32,7 @@ export default function App() {
       <TouchableOpacity style={styles.button1} onPress={(CameraPress)}>
         <Image style={styles.buttonImage} source={require('./assets/Images/camera 1.png')} />
       </TouchableOpacity>
-      <Text style={styles.topic}>UPLOAD / TAKE</Text>
+      <Text style={styles.topic}>UPLOAD BRO / TAKE</Text>
       <TouchableOpacity style={styles.button2} onPress={(GalleryPress)}>
         <Image style={styles.buttonImage} source={require('./assets/Images/upload 1.png')} />
       </TouchableOpacity>
