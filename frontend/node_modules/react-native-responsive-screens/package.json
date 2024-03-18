@@ -1,0 +1,31 @@
+{
+  "name": "react-native-responsive-screens",
+  "version": "1.0.1",
+  "description": "Allows the creation of screens with icons and responsive texts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielfanti/react-native-responsive-screens.git"
+  },
+  "keywords": [
+    "react-native",
+    "responsive-ui",
+    "responsive-view",
+    "responsive-screens",
+    "responsive-screens-fonts",
+    "ios-ipad-fonts",
+    "responsive"
+  ],
+  "author": "Gabriel Fanti do Nascimento <gabrielfanti1@gmail.com> (https://github.com/gabrielfanti)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gabrielfanti/react-native-responsive-screens/issues"
+  },
+  "homepage": "https://github.com/gabrielfanti/react-native-responsive-screens#readme",
+  "peerDependencies": {
+    "react-native": ">=0.35"
+  }
+}
