@@ -61,3 +61,18 @@ export default function App() {
             </View>
           </View>
         </View>
+        <View style={styles.box2}>
+          <View style={styles.guidelineButton}>
+            <TouchableOpacity style={styles.button} onPress={GuidelinePress}>
+              <Text style={styles.buttonText}>GUIDELINES</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+          <View style={styles.box3}>
+        
+          </View>
+        <StatusBar hidden/>
+      </View>
+    </View>
+  );
+}
