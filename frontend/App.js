@@ -12,7 +12,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 // Screen Imports
 import PrivacyScreen from "./Privacy";
 import GuidelinesScreen from "./Guidelines";
-import UploadScreen from "./UploadOrTake";
+import UploadScreen from "./HomeScreen";
 
 
 
