@@ -8,22 +8,21 @@ import { useNavigation } from "@react-navigation/native";
 // ______________________________Dev Area______________________________ //
 
 
-
 export default function App() {
-  const [fontsLoaded] = useFonts({
-    'Inter-Topic': require('./assets/Fonts/Inter/static/Inter-Bold.ttf'),
-    'Inter-Body': require('./assets/Fonts/Inter/static/Inter-Regular.ttf')
-  });
-
-  const [isChecked, setIsChecked] = useState(false);
-
-  const navigation = useNavigation();
-
-  if (!fontsLoaded) {
-    return null;
-  }
-
-
-  const GuidelinePress = () => {
-    navigation.navigate('Guidelines')
-  };
+    const [isChecked, setIsChecked] = useState(false);
+  
+    const checkboxToggled = () => {
+      setIsChecked(!isChecked);
+    };
+  
+    const navigation = useNavigation();
+  
+    const GuidelinePress = () => {
+      if (isChecked) {
+        navigation.navigate("Guidelines")
+      }
+  
+      else {
+        console.log("Please Agree to Privacy Policies!")
+      }
+    };
