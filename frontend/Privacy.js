@@ -19,3 +19,8 @@ export default function App() {
   if (!fontsLoaded) {
     return null;
   }
+
+
+  const GuidelinePress = () => {
+    navigation.navigate('Guidelines')
+  };
