@@ -73,3 +73,7 @@ while True:
             # Display the recognized hand sign label above the left corner of the relevant hand
             cv2.putText(frame, class_label, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1)
 
+
+# Display the video feed
+    cv2.imshow('Camera App', frame)
+
