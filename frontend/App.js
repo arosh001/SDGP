@@ -9,10 +9,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { useWindowDimensions } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-// Screen Imports
-import PrivacyScreen from "./Privacy";
-import GuidelinesScreen from "./Guidelines";
-import UploadScreen from "./UploadOrTake";
+
 
 
 
