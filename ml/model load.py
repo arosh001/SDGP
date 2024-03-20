@@ -17,3 +17,6 @@ def extract_bounding_box(hand_landmarks, frame_shape):
     y_min = min(y_values) * frame_shape[0]
 
     return int(x_min), int(y_min)
+
+
+cap = cv2.VideoCapture(0)
