@@ -17,3 +17,32 @@ import UploadScreen from "./UploadOrTake";
 
 
 // ______________________________Dev Area______________________________ //
+
+
+
+// Home Screen Component
+function HomeScreen() {
+    const navigation = useNavigation();
+  
+    const logoPress = () => {
+      navigation.navigate("Privacy");
+    };
+  
+    const styles = useStyles();
+  
+    return (
+      <View style={styles.root}>
+        <StatusBar hidden/>
+        <View style={styles.top}/>
+        <View style={styles.middle}>
+          <TouchableOpacity onPress={logoPress}>
+            <Image source={require('./assets/Images/logo.png')} style={[styles.logo]}></Image>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.bottom}>
+          <Image source={require('./assets/Images/BG 1.png')} style={[styles.bgImage]}></Image>
+        </View>
+      </View>
+    );
+    }
+  
