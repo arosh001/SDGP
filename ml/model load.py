@@ -20,3 +20,5 @@ def extract_bounding_box(hand_landmarks, frame_shape):
 
 
 cap = cv2.VideoCapture(0)
+
+image_width, image_height = 400, 400
