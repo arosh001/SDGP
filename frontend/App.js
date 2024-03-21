@@ -19,7 +19,36 @@ import UploadScreen from "./UploadOrTake";
 
 // ______________________________Dev Area______________________________ //
 
-
+// Style Sheet
+function useStyles() {
+  const {width, height} = useWindowDimensions();
+  
+  return StyleSheet.create({
+    root: {flex: 1, flexDirection: 'column'},
+    top: {
+      flex: 1,
+      backgroundColor: '#F8B11B'
+    },
+    middle: {
+      height: height > 500 ? 300 : 150,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: '#F8B11B'
+    },
+    bottom: {
+      height: height > 500 ? 310 : 150,
+      backgroundColor: '#F8B11B'
+    },
+    logo: {
+      width: 260,
+      height: 65,
+    },
+    bgImage: {
+      width: '100%',
+      height: '100%'
+    },
+  });
+}
 
 // Home Screen Component
 function HomeScreen() {
