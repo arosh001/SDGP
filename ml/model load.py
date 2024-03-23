@@ -6,7 +6,7 @@ from tensorflow.keras.models import load_model
 mp_hands = mp.solutions.hands
 hands = mp_hands.Hands(static_image_mode=False, max_num_hands=2, min_detection_confidence=0.5)
 
-model = load_model("C:\\Users\\sidug\\Downloads\\trained_model (2).h5")
+model = load_model("the location of pre-trained model")
 
 # Define the extract_bounding_box function
 def extract_bounding_box(hand_landmarks, frame_shape):
@@ -30,7 +30,7 @@ while True:
 
     # Convert the BGR image to RGB
     rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-    cv2.imwrite("C:\\Users\\sidug\\OneDrive\\Desktop\\rgb frame\\1.png", rgb_frame)
+   # cv2.imwrite("C:\\Users\\sidug\\OneDrive\\Desktop\\rgb frame\\1.png", rgb_frame)
 
     # Process the image and get hand landmarks using MediaPipe
     results = hands.process(rgb_frame)
@@ -43,7 +43,7 @@ while True:
 
             # Convert the RGB frame to grayscale
             gray_frame = cv2.cvtColor(rgb_frame, cv2.COLOR_RGB2GRAY)
-            cv2.imwrite("C:\\Users\\sidug\\OneDrive\\Desktop\\gray\\1.png", gray_frame)
+         #   cv2.imwrite("C:\\Users\\sidug\\OneDrive\\Desktop\\gray\\1.png", gray_frame)
 
             # Extract the region of interest (ROI) for hand sign recognition
             roi_sign = gray_frame[y:y + image_height, x:x + image_width]
@@ -53,13 +53,13 @@ while True:
             print("ROI Sign pixels (before preprocessing):", roi_sign)
 
             # Save the ROI frame as a PNG image
-            cv2.imwrite("C:\\Users\\sidug\\OneDrive\\Desktop\\roi\\roi_frame.png", roi_sign)
+          #  cv2.imwrite("C:\\Users\\sidug\\OneDrive\\Desktop\\roi\\roi_frame.png", roi_sign)
 
             # Preprocess the captured frame for the model
             roi_sign = cv2.resize(roi_sign, (image_width, image_height))
             roi_sign = np.expand_dims(roi_sign, axis=-1)  # Add channel dimension
             roi_sign = roi_sign / 255.0  # Normalize pixel values
-            cv2.imwrite("C:\\Users\\sidug\\OneDrive\\Desktop\\roi2\\roi_frame.png", roi_sign)
+          #  cv2.imwrite("C:\\Users\\sidug\\OneDrive\\Desktop\\roi2\\roi_frame.png", roi_sign)
 
             # Print out the shape and pixel values of roi_sign after preprocessing
             print("ROI Sign shape (after preprocessing):", roi_sign.shape)
