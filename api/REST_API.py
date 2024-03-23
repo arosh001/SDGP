@@ -91,6 +91,38 @@ def detect():
     cv2.destroyAllWindows()
 
 
+# Initialize Firebase admin SDK
+cred = credentials.Certificate('path/to/your-service-account-file.json')
+firebase_admin.initialize_app(cred)
+
+db = firestore.client()
+
+def search_videos(keyword):
+     videos_ref = db.collection('videos')
+     query = videos_ref.where('tags', 'array-contains', keyword.lower())
+     results = query.stream()
+
+     video_list = []
+     for doc in results:
+         data = doc.to_dict()
+         video_list.append({
+             'id': doc.id,
+             'title': data['title'],
+             'url': data['url']
+         })
+
+     return video_list
+
+
+@app.route('/api/videos', methods=['GET'])
+def get_videos():
+     keyword = request.args.get('keyword')
+     if not keyword:
+         return jsonify({'error': 'Keyword is required'}), 400
+
+     videos = search_videos()
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
