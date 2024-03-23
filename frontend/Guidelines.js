@@ -8,6 +8,96 @@ import { useNavigation } from "@react-navigation/native";
 // ______________________________Dev Area______________________________ //
 
 
+// Style Sheet
+function useStyles() {
+  const {width, height} = useWindowDimensions();
+
+// Fonts
+  const [fontsLoaded] = useFonts({
+    "Inter-Topic": require("./assets/Fonts/Inter/static/Inter-Bold.ttf"),
+    "Inter-Body": require("./assets/Fonts/Inter/static/Inter-Regular.ttf")
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
+  return StyleSheet.create({
+    root: {
+      flex: 1,
+      flexDirection: 'column',
+      alignItems: 'center',
+      backgroundColor: '#F8B11B',
+    },
+    bgImage2: {
+      bottom: '0%',
+      position: 'absolute',
+      height: height > 500 ? 260 : 200,
+      width: width > 600 ? 700 : 500,
+    },
+    sub_root: {
+      flex: 1,
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    box1: {
+      flex: 0.6,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: '#0C1821',
+      borderRadius: 20,
+      height: height > 500 ? 500 : 150,
+      width: width > 400 ? 350 : 300,
+    },
+    boxTop: {
+      width: '85%',
+      height: '10%',
+    },
+    topic: {
+      fontFamily: 'Inter-Topic',
+      color: "#FEFEFF"
+    },
+    boxMiddle: {
+      width: '85%',
+      height: '70%',
+    },
+    paragraph: {
+      textAlign: 'justify',
+      fontFamily: 'Inter-Body',
+      color: "#FEFEFF"
+    },
+    validate: {
+      flexDirection: 'row',
+      gap: 10,
+      top: 20
+    },
+    box2: {
+      flex: 0.2,
+      width: width > 400 ? 350 : 300,
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+    button: {
+      backgroundColor: 'black',
+      width: width > 400 ? 160 : 150,
+      height: 55,
+      borderRadius: 100,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    buttonText: {
+      color: 'white',
+      fontFamily: 'Inter-Topic',
+    },
+    box3: {
+      width: width > 500 ? 500 :500,
+      alignItems: 'center',
+      justifyContent: 'center'
+    }, 
+  })
+}
+
 export default function App() {
 
     const navigation = useNavigation();
