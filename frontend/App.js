@@ -75,7 +75,7 @@ export default function App() {
       </Stack.Navigator>
     </NavigationContainer>
   );
-  
+
 // Home Screen Component
 function HomeScreen() {
     const navigation = useNavigation();
@@ -101,4 +101,4 @@ function HomeScreen() {
       </View>
     );
     }
-  
+}
