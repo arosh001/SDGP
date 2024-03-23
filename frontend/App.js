@@ -50,6 +50,32 @@ function useStyles() {
   });
 }
 
+// Fonts
+export default function App() {
+  const [fontsLoaded] = useFonts({
+    "Inter-Topic": require("./assets/Fonts/Inter/static/Inter-Bold.ttf"),
+    "Inter-Body": require("./assets/Fonts/Inter/static/Inter-Regular.ttf")
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
+// Navigating
+  const Stack = createStackNavigator();
+
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Privacy" component={PrivacyScreen} options={{headerShown : false}} />
+        <Stack.Screen name="Guidelines" component={GuidelinesScreen} options={{headerShown : false}} />
+        <Stack.Screen name="UploadOrTake" component={UploadScreen} options={{headerShown : false}} />
+  
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+  
 // Home Screen Component
 function HomeScreen() {
     const navigation = useNavigation();
