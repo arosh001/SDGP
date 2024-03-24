@@ -1,5 +1,12 @@
 from flask import Flask, jsonify, request
+import os
 import cv2
+import mediapipe as mp
+from tensorflow.keras.models import load_model
+import firebase_admin
+import numpy as np
+from firebase_admin import credentials, firestore
+
 
 
 app = Flask(__name__)
@@ -97,8 +104,8 @@ firebase_admin.initialize_app(cred)
 
 db = firestore.client()
 
-def search_videos(keyword):
-     videos_ref = db.collection('videos')
+def search_videos(collection,keyword):
+     videos_ref = db.collection('collection')
      query = videos_ref.where('tags', 'array-contains', keyword.lower())
      results = query.stream()
 
