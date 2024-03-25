@@ -5,6 +5,16 @@ import Btn from "../components/Btn"
 import firebase from 'firebase/app';
 import "firebase/auth";
 
+const styles = StyleSheet.create({
+    view: {
+        flex: 1,
+        width: "100%",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: '#F8B11B'
+    }
+})
+
 export default function SignUpScreen({ navigation }) {
 
     const [values, setValues] = useState({
