@@ -22,20 +22,5 @@ export default function SignUpScreen({ navigation }) {
         })
     }
 
-    function SignUp() {
-
-        const { email, pwd, pwd2 } = values
-
-        if (pwd == pwd2) {
-            firebase.auth().createUserWithEmailAndPassword(email, pwd)
-                .then(() => {
-                })
-                .catch((error) => {
-                    alert(error.message)
-                    // ..
-                });
-        } else {
-            alert("Passwords are different!")
-        }
-    }
+    
 }
