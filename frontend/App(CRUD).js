@@ -24,3 +24,36 @@ function App() {
   appId: "1:3510611011:web:148ec0048c7e18e6ce38f6"
     
   };
+
+  // Check if Firebase has been initialized
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig); 
+  } else {
+    firebase.app();
+  }
+
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  });
+
+  return (
+    <NavigationContainer>
+      {isLoggedIn ? (
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+        </Stack.Navigator>
+      ) : (
+        <Stack.Navigator>
+          <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="Sign Up" component={SignUpScreen} options={{ headerShown: false }} />
+        </Stack.Navigator>
+      )}
+    </NavigationContainer>
+  );
+}
+
+export default App;
